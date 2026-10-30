@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#fff0f6">
+
 <title>A Little Apology | E A</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -24,6 +25,7 @@ body {
   align-items: center;
   padding: 25px;
   overflow-x: hidden;
+
   background:
     radial-gradient(circle at 15% 20%, #ffd6e7, transparent 35%),
     radial-gradient(circle at 85% 80%, #d9dcff, transparent 35%),
@@ -41,18 +43,27 @@ body {
   padding: 55px 35px;
   border-radius: 35px;
   text-align: center;
+
   background: rgba(255,255,255,.78);
   border: 1px solid rgba(255,255,255,.9);
+
   box-shadow:
     0 35px 70px rgba(111, 91, 155, .18),
     inset 0 2px 5px white;
+
   transform-style: preserve-3d;
   animation: appear 1s ease both, float 5s ease-in-out infinite 1s;
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: rotateX(15deg) translateY(40px); }
-  to { opacity: 1; transform: rotateX(0) translateY(0); }
+  from {
+    opacity: 0;
+    transform: rotateX(15deg) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0) translateY(0);
+  }
 }
 
 @keyframes float {
@@ -69,8 +80,12 @@ body {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-12px) rotate(5deg); }
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
 }
 
 h1 {
@@ -113,14 +128,36 @@ h1 {
   animation: drift 4s ease-in-out infinite;
 }
 
-.d1 { top: 25px; left: 25px; }
-.d2 { top: 30px; right: 28px; animation-delay: 1s; }
-.d3 { bottom: 25px; left: 30px; animation-delay: 2s; }
-.d4 { bottom: 25px; right: 30px; animation-delay: 1.5s; }
+.d1 {
+  top: 25px;
+  left: 25px;
+}
+
+.d2 {
+  top: 30px;
+  right: 28px;
+  animation-delay: 1s;
+}
+
+.d3 {
+  bottom: 25px;
+  left: 30px;
+  animation-delay: 2s;
+}
+
+.d4 {
+  bottom: 25px;
+  right: 30px;
+  animation-delay: 1.5s;
+}
 
 @keyframes drift {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-12px) rotate(12deg); }
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-12px) rotate(12deg);
+  }
 }
 
 .footer {
@@ -129,48 +166,24 @@ h1 {
   font-size: 13px;
 }
 
-.analytics {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(440px, calc(100% - 28px));
-  padding: 15px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 10px 35px #66508030;
-  text-align: center;
-  z-index: 10;
-  color: #62566d;
-  font-size: 13px;
-}
-
-.analytics p {
-  margin-bottom: 10px;
-}
-
-.analytics button {
-  border: 0;
-  border-radius: 20px;
-  padding: 9px 17px;
-  margin: 3px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.allow {
-  background: #dca6d2;
-  color: white;
-}
-
-.decline {
-  background: #f0edf3;
-  color: #65576c;
-}
-
 @media(max-width: 480px) {
-  .card { padding: 48px 23px; }
-  .message { font-size: 15px; }
+  .card {
+    padding: 48px 23px;
+  }
+
+  .message {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
@@ -178,7 +191,9 @@ h1 {
 <body>
 
 <div class="scene">
+
   <main class="card">
+
     <span class="decoration d1">🌸</span>
     <span class="decoration d2">✨</span>
     <span class="decoration d3">🦋</span>
@@ -187,9 +202,13 @@ h1 {
     <div class="emoji">🌻</div>
 
     <h1>A Little Apology</h1>
-    <div class="subtitle">A KIND MESSAGE FOR <span class="name">E A</span></div>
+
+    <div class="subtitle">
+      A KIND MESSAGE FOR <span class="name">E A</span>
+    </div>
 
     <div class="message">
+
       <p>Hi <span class="name">E A</span> 😊</p>
 
       <p>
@@ -208,122 +227,148 @@ h1 {
       </p>
 
       <p>Take care. 🌷</p>
+
     </div>
 
     <div class="footer">
       Wishing you happiness and good days ahead ☀️
     </div>
+
   </main>
+
 </div>
 
-
 <script>
-const SUPABASE_URL = "https://qxhfafifugbxglruinec.supabase.co";
-const SUPABASE_KEY = "sb_publishable_T5eFBJkt6u4cXhDFCgi_QQ_Rpm_Z8Cr";
+(() => {
+  "use strict";
 
-const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  // Supabase configuration
+  const SUPABASE_URL =
+    "https://qxhfafifugbxglruinec.supabase.co";
 
-const consentBox = document.getElementById("analyticsConsent");
+  const SUPABASE_KEY =
+    "sb_publishable_T5eFBJkt6u4cXhDFCgi_QQ_Rpm_Z8Cr";
 
-function getSessionId() {
-  let id = localStorage.getItem("sorry_session_id");
-
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem("sorry_session_id", id);
+  // Check Supabase library
+  if (!window.supabase) {
+    console.error("Supabase library failed to load.");
+    return;
   }
 
-  return id;
-}
+  // Create Supabase client
+  const db = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
 
-function getBrowser() {
-  const ua = navigator.userAgent;
+  // Generate a session ID
+  let memorySessionId = null;
 
-  if (ua.includes("Edg/")) return "Edge";
-  if (ua.includes("Chrome/")) return "Chrome";
-  if (ua.includes("Firefox/")) return "Firefox";
-  if (ua.includes("Safari/")) return "Safari";
+  function getSessionId() {
+    try {
+      let id = localStorage.getItem("sorry_session_id");
 
-  return "Other";
-}
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem("sorry_session_id", id);
+      }
 
-function getOS() {
-  const ua = navigator.userAgent;
+      return id;
 
-  if (ua.includes("Windows")) return "Windows";
-  if (ua.includes("Mac OS")) return "macOS";
-  if (ua.includes("Android")) return "Android";
-  if (/iPhone|iPad|iPod/.test(ua)) return "iOS";
-  if (ua.includes("Linux")) return "Linux";
+    } catch (error) {
+      if (!memorySessionId) {
+        memorySessionId = crypto.randomUUID();
+      }
 
-  return "Other";
-}
-
-function getDevice() {
-  const ua = navigator.userAgent;
-
-  if (/tablet|ipad/i.test(ua)) return "Tablet";
-  if (/mobile|iphone|android/i.test(ua)) return "Mobile";
-
-  return "Desktop";
-}
-
-async function saveEvent(eventName, details = {}) {
-  const payload = {
-    session_id: getSessionId(),
-    event_name: eventName,
-    screen: "sorry",
-    details,
-    user_agent: navigator.userAgent,
-    browser: getBrowser(),
-    operating_system: getOS(),
-    device_type: getDevice(),
-    page_url: window.location.href,
-    referrer: document.referrer || null,
-    occurred_at: new Date().toISOString()
-  };
-
-  const { error } = await db
-    .from("sorry_page_events")
-    .insert(payload);
-
-  if (error) {
-    console.error("Database insert failed:", error.message);
+      return memorySessionId;
+    }
   }
-}
 
-function initializeAnalytics() {
-  const consent = localStorage.getItem("sorry_analytics_consent");
+  // Browser detection
+  function getBrowser() {
+    const ua = navigator.userAgent;
 
-  if (consent === "accepted") {
-    saveEvent("page_view");
-  } else if (consent === null) {
-    consentBox.hidden = false;
+    if (ua.includes("Edg/")) return "Edge";
+    if (ua.includes("OPR/")) return "Opera";
+    if (ua.includes("Chrome/")) return "Chrome";
+    if (ua.includes("Firefox/")) return "Firefox";
+    if (ua.includes("Safari/")) return "Safari";
+
+    return "Other";
   }
-}
 
-document.getElementById("allowAnalytics").addEventListener("click", async () => {
-  localStorage.setItem("sorry_analytics_consent", "accepted");
-  consentBox.hidden = true;
+  // Operating system detection
+  function getOS() {
+    const ua = navigator.userAgent;
 
-  await saveEvent("analytics_consent");
-  await saveEvent("page_view");
-});
+    if (ua.includes("Windows")) return "Windows";
+    if (ua.includes("Mac OS")) return "macOS";
+    if (ua.includes("Android")) return "Android";
 
-document.getElementById("declineAnalytics").addEventListener("click", async () => {
-  localStorage.setItem("sorry_analytics_consent", "declined");
-  consentBox.hidden = true;
+    if (/iPhone|iPad|iPod/.test(ua)) {
+      return "iOS";
+    }
 
-  await saveEvent("analytics_declined");
-});
+    if (ua.includes("Linux")) return "Linux";
 
-window.addEventListener("pagehide", () => {
-  if (localStorage.getItem("sorry_analytics_consent") === "accepted") {
-    saveEvent("page_hidden");
+    return "Other";
   }
-});
 
-initializeAnalytics();
+  // Device detection
+  function getDevice() {
+    const ua = navigator.userAgent;
+
+    if (/tablet|ipad/i.test(ua)) {
+      return "Tablet";
+    }
+
+    if (/mobile|iphone|android/i.test(ua)) {
+      return "Mobile";
+    }
+
+    return "Desktop";
+  }
+
+  // Save page-view event
+  async function savePageView() {
+    try {
+      const payload = {
+        session_id: getSessionId(),
+        event_name: "page_view",
+        screen: "sorry",
+        details: {},
+        user_agent: navigator.userAgent,
+        browser: getBrowser(),
+        operating_system: getOS(),
+        device_type: getDevice(),
+        page_url: window.location.href,
+        referrer: document.referrer || null,
+        occurred_at: new Date().toISOString()
+      };
+
+      const { error } = await db
+        .from("sorry_page_events")
+        .insert(payload);
+
+      if (error) {
+        console.error(
+          "Supabase insert failed:",
+          error.message
+        );
+        return;
+      }
+
+      console.log("Page view successfully saved.");
+
+    } catch (error) {
+      console.error("Analytics error:", error);
+    }
+  }
+
+  // Automatically record page visit
+  savePageView();
+
+})();
 </script>
 
 </body>
