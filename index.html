@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<title>A Little Apology | E A</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, #ffd6e7, transparent 35%),
+    radial-gradient(circle at 85% 80%, #d9dcff, transparent 35%),
+    linear-gradient(135deg, #fff0f6, #f1edff, #e5f7ff);
+}
+
+.scene {
+  perspective: 1200px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.card {
+  position: relative;
+  padding: 55px 35px;
+  border-radius: 35px;
+  text-align: center;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow:
+    0 35px 70px rgba(111, 91, 155, .18),
+    inset 0 2px 5px white;
+  transform-style: preserve-3d;
+  animation: appear 1s ease both, float 5s ease-in-out infinite 1s;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: rotateX(15deg) translateY(40px); }
+  to { opacity: 1; transform: rotateX(0) translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+
+.emoji {
+  font-size: 65px;
+  margin-bottom: 18px;
+  display: inline-block;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,.12));
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+h1 {
+  color: #76528e;
+  font-size: clamp(30px, 6vw, 43px);
+  margin-bottom: 12px;
+  text-shadow: 0 3px 0 #eadcf5;
+}
+
+.subtitle {
+  color: #a27cae;
+  font-size: 15px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.message {
+  color: #62566d;
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.message p {
+  margin-bottom: 15px;
+}
+
+.name {
+  display: inline-block;
+  color: #d46c9e;
+  font-weight: 800;
+  text-shadow: 0 2px 0 #ffe0ed;
+}
+
+.decoration {
+  position: absolute;
+  font-size: 30px;
+  pointer-events: none;
+  animation: drift 4s ease-in-out infinite;
+}
+
+.d1 { top: 25px; left: 25px; }
+.d2 { top: 30px; right: 28px; animation-delay: 1s; }
+.d3 { bottom: 25px; left: 30px; animation-delay: 2s; }
+.d4 { bottom: 25px; right: 30px; animation-delay: 1.5s; }
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(12deg); }
+}
+
+.footer {
+  margin-top: 32px;
+  color: #9a83a8;
+  font-size: 13px;
+}
+
+.analytics {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(440px, calc(100% - 28px));
+  padding: 15px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px #66508030;
+  text-align: center;
+  z-index: 10;
+  color: #62566d;
+  font-size: 13px;
+}
+
+.analytics p {
+  margin-bottom: 10px;
+}
+
+.analytics button {
+  border: 0;
+  border-radius: 20px;
+  padding: 9px 17px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.allow {
+  background: #dca6d2;
+  color: white;
+}
+
+.decline {
+  background: #f0edf3;
+  color: #65576c;
+}
+
+@media(max-width: 480px) {
+  .card { padding: 48px 23px; }
+  .message { font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+  <main class="card">
+    <span class="decoration d1">🌸</span>
+    <span class="decoration d2">✨</span>
+    <span class="decoration d3">🦋</span>
+    <span class="decoration d4">🌷</span>
+
+    <div class="emoji">🌻</div>
+
+    <h1>A Little Apology</h1>
+    <div class="subtitle">A KIND MESSAGE FOR <span class="name">E A</span></div>
+
+    <div class="message">
+      <p>Hi <span class="name">E A</span> 😊</p>
+
+      <p>
+        I just wanted to apologize if anything I said or did
+        made you uncomfortable, or if you didn't like it.
+      </p>
+
+      <p>
+        That wasn't my intention, and I respect your
+        feelings and perspective.
+      </p>
+
+      <p>
+        No pressure or expectations. I simply wanted
+        to acknowledge it and say I'm sorry.
+      </p>
+
+      <p>Take care. 🌷</p>
+    </div>
+
+    <div class="footer">
+      Wishing you happiness and good days ahead ☀️
+    </div>
+  </main>
+</div>
+
+
+<script>
+const SUPABASE_URL = "https://qxhfafifugbxglruinec.supabase.co";
+const SUPABASE_KEY = "sb_publishable_T5eFBJkt6u4cXhDFCgi_QQ_Rpm_Z8Cr";
+
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const consentBox = document.getElementById("analyticsConsent");
+
+function getSessionId() {
+  let id = localStorage.getItem("sorry_session_id");
+
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("sorry_session_id", id);
+  }
+
+  return id;
+}
+
+function getBrowser() {
+  const ua = navigator.userAgent;
+
+  if (ua.includes("Edg/")) return "Edge";
+  if (ua.includes("Chrome/")) return "Chrome";
+  if (ua.includes("Firefox/")) return "Firefox";
+  if (ua.includes("Safari/")) return "Safari";
+
+  return "Other";
+}
+
+function getOS() {
+  const ua = navigator.userAgent;
+
+  if (ua.includes("Windows")) return "Windows";
+  if (ua.includes("Mac OS")) return "macOS";
+  if (ua.includes("Android")) return "Android";
+  if (/iPhone|iPad|iPod/.test(ua)) return "iOS";
+  if (ua.includes("Linux")) return "Linux";
+
+  return "Other";
+}
+
+function getDevice() {
+  const ua = navigator.userAgent;
+
+  if (/tablet|ipad/i.test(ua)) return "Tablet";
+  if (/mobile|iphone|android/i.test(ua)) return "Mobile";
+
+  return "Desktop";
+}
+
+async function saveEvent(eventName, details = {}) {
+  const payload = {
+    session_id: getSessionId(),
+    event_name: eventName,
+    screen: "sorry",
+    details,
+    user_agent: navigator.userAgent,
+    browser: getBrowser(),
+    operating_system: getOS(),
+    device_type: getDevice(),
+    page_url: window.location.href,
+    referrer: document.referrer || null,
+    occurred_at: new Date().toISOString()
+  };
+
+  const { error } = await db
+    .from("sorry_page_events")
+    .insert(payload);
+
+  if (error) {
+    console.error("Database insert failed:", error.message);
+  }
+}
+
+function initializeAnalytics() {
+  const consent = localStorage.getItem("sorry_analytics_consent");
+
+  if (consent === "accepted") {
+    saveEvent("page_view");
+  } else if (consent === null) {
+    consentBox.hidden = false;
+  }
+}
+
+document.getElementById("allowAnalytics").addEventListener("click", async () => {
+  localStorage.setItem("sorry_analytics_consent", "accepted");
+  consentBox.hidden = true;
+
+  await saveEvent("analytics_consent");
+  await saveEvent("page_view");
+});
+
+document.getElementById("declineAnalytics").addEventListener("click", async () => {
+  localStorage.setItem("sorry_analytics_consent", "declined");
+  consentBox.hidden = true;
+
+  await saveEvent("analytics_declined");
+});
+
+window.addEventListener("pagehide", () => {
+  if (localStorage.getItem("sorry_analytics_consent") === "accepted") {
+    saveEvent("page_hidden");
+  }
+});
+
+initializeAnalytics();
+</script>
+
+</body>
+</html>
